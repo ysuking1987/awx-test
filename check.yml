@@ -1,0 +1,6 @@
+- name: check port listen
+  hosts: all
+  tasks:
+    - name: check 
+      shell:
+        netstat -ntpl |grep "node"
