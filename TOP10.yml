@@ -1,0 +1,13 @@
+- name: show  TOP10 CPU  && MEMORY 
+  hosts: all
+  tasks:
+    - name: SHOW TOP10
+      shell:
+        echo "******* TOP10 CPU *******"
+        ps auxw | head -1;ps auxw | sort -rn -k3 | head -10
+        echo "******* TOP10 CPU END *******"
+        echo ""
+        echo ""
+        echo "******* TOP10 MEM *******"
+		    ps auxw | head -1;ps auxw|sort -rn -k4 | head -10
+        echo "******* TOP10 MEM END *******"   
