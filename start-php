@@ -1,0 +1,6 @@
+- name: start php
+  hosts: all
+  tasks:
+    - name: start php 
+      shell:
+        /etc/init.d/pd-php-fpm restart
