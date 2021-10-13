@@ -3,11 +3,11 @@
   tasks:
     - name: SHOW TOP10
       shell:
-        echo "******* TOP10 CPU *******"
-        ps auxw | head -1;ps auxw | sort -rn -k3 | head -10
-        echo "******* TOP10 CPU END *******"
-        echo ""
-        echo ""
-        echo "******* TOP10 MEM *******"
-        ps auxw | head -1;ps auxw|sort -rn -k4 | head -10
-        echo "******* TOP10 MEM END *******" 
+        /usr/bin/echo "******* TOP10 CPU *******"
+        /usr/bin/ps auxw | /usr/bin/head -1;/usr/bin/ps auxw | /usr/bin/sort -rn -k3 | /usr/bin/head -10
+        /usr/bin/echo "******* TOP10 CPU END *******"
+        /usr/bin/echo ""
+        /usr/bin/echo ""
+        /usr/bin/echo "******* TOP10 MEM *******"
+        /usr/bin/ps auxw | /usr/bin/head -1;/usr/bin/ps auxw| /usr/bin/sort -rn -k4 | /usr/bin/head -10
+        /usr/bin/echo "******* TOP10 MEM END *******" 
