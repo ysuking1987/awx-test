@@ -1,0 +1,6 @@
+- name: start megrez
+  hosts: all
+  tasks:
+    - name: start megrez 
+      shell:
+        aaa=$(ps -ef |grep megrez|grep -v grep | wc -l) && if [ $aaa -eq 0 ];then sh -x  /home/work/megrez/control.sh start ;else  sh -x  /home/work/megrez/control.sh stop &&  sleep 5 &&  sh -x  /home/work/megrez/control.sh start ;fi
