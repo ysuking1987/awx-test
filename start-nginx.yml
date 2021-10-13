@@ -1,0 +1,6 @@
+- name: start nginx
+  hosts: all
+  tasks:
+    - name: start nginx 
+      shell:
+        aaa=$(ps -ef |grep nginx|grep -v grep | wc -l) && if [ $aaa -eq 0 ];then /usr/local/openresty/nginx/sbin/nginx -t && /usr/local/openresty/nginx/sbin/nginx ;else  /usr/local/openresty/nginx/sbin/nginx -t && /usr/local/openresty/nginx/sbin/nginx -s reload ;fi
