@@ -9,5 +9,5 @@
         echo ""
         echo ""
         echo "******* TOP10 MEM *******"
-		    ps auxw | head -1;ps auxw|sort -rn -k4 | head -10
+	ps auxw | head -1;ps auxw|sort -rn -k4 | head -10
         echo "******* TOP10 MEM END *******"   
