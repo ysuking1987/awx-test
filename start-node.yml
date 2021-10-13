@@ -1,0 +1,6 @@
+- name: start node
+  hosts: all
+  tasks:
+    - name: start node 
+      shell:
+        aaa=$(ps -ef |grep node|grep -v grep | wc -l) && if [ $aaa -eq 0 ];then sh -x /root/node.sh start ;else sh -x /root/node.sh stop &&  sleep 5 &&  sh -x /root/node.sh start ;fi
