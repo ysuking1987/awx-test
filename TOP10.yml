@@ -3,6 +3,7 @@
   tasks:
     - name: SHOW TOP10
       shell:
-        /usr/bin/ps -auxw | /usr/bin/head -n 1 && /usr/bin/ps -auxw | /usr/bin/sort -rn -k3 | /usr/bin/head -n 10
-        /usr/bin/ps -auxw | /usr/bin/head -n 1 && /usr/bin/ps -auxw | /usr/bin/sort -rn -k4 | /usr/bin/head -n 10
+        /usr/bin/ps -auxw | /usr/bin/head -n 1
+        /usr/bin/ps -auxw | /usr/bin/sort -rn -k3 | /usr/bin/head -n 10
+        /usr/bin/ps -auxw | /usr/bin/sort -rn -k4 | /usr/bin/head -n 10
  
