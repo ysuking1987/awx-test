@@ -1,0 +1,7 @@
+---
+- hosts: all
+  gather_facts: yes
+  tasks:
+  - name: get_os
+    debug:
+      msg:  "IP: {{ inventory_hostname }}; System version: {{ansible_distribution_file_variety}} {{ansible_distribution_version}}"
