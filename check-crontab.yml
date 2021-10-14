@@ -1,0 +1,6 @@
+- name: check crontab 
+  hosts: all
+  tasks:
+    - name: check crontab
+      shell:
+        crontab -l |grep "{{pname}}" 
