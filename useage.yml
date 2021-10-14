@@ -1,0 +1,17 @@
+Ansible playbook  server-cpu-mem-disk-usage.yml
+
+---
+- name: Statistics CPU Memory Disk Utilization
+  hosts: node
+  become: no
+  remote_user: root
+  gather_facts: no
+  tasks:
+    - name: "Statistics CPU Memory Disk Utilization..."
+      shell: |
+        free -m | awk 'NR==2{printf "Memory Usage: %s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }'
+        df -h -t ext2 -t ext4 -t xfs| grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print "Disk Usage:"" " $1 " " $3"/"$2" ""("$5")"}'
+        top -bn1 | grep 'load average' | awk '{printf "CPU Load: %.2f\n", $(NF-2)}'
+        top -bn1 | grep Cpu |awk '{printf "Cpu usage: (%.2f%%)\n",100-$8}'
+      register: out
+    - debug: var=out.stdout_lines
