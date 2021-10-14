@@ -3,4 +3,4 @@
   tasks:
     - name: search log
       shell:
-        grep -ir "{{key}}" /home/work/logs/ | sed -n "1,10p"
+        grep -ir "{{key}}" /home/work/logs/ | sed -n "1,{{num}}p"
