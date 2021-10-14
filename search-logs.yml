@@ -1,0 +1,6 @@
+- name: search logs 
+  hosts: all
+  tasks:
+    - name: search log
+      shell:
+        grep -ir "{{key}}" /home/work/logs/ | sed -n "1,10p"
