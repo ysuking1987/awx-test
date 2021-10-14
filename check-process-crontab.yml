@@ -1,0 +1,10 @@
+- name: check process 
+  hosts: all
+  tasks:
+    - name: check process
+      shell:
+        ps  -ef |grep "{{pname}}" |grep -v grep 
+  tasks:
+    - name: check crontab
+      shell:
+         crontab -l |grep "{{pname}}"  
