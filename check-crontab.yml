@@ -3,4 +3,4 @@
   tasks:
     - name: check crontab
       shell:
-        crontab -l |grep "{{pname}}" 
+        crontab -l |egrep "{{pname}}" 
